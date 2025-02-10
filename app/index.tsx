@@ -1,19 +1,23 @@
-import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { View, StyleSheet } from "react-native";
+import { useRouter } from "expo-router";
 import Sign_in from "../components/sign_in";
-import Welcome from "../components/welcome";
 
 export default function App() {
-  const [isSignedIn, setIsSignedIn] = useState<boolean>(false);
-  const [username, setUsername] = useState<string>("");
+  const [isSignedIn, setIsSignedIn] = useState(false);
+  const [username, setUsername] = useState("");
+  const router = useRouter();
+
+  const handleLogin = () => {
+    setIsSignedIn(true);
+    router.replace("/welcome"); // Navigate to Welcome
+  };
+
   return (
     <View style={styles.container}>
-      {isSignedIn ? (
-        <Welcome username={username} />
-      ) : (
+      {isSignedIn ? null : (
         <Sign_in
-          setIsSignedIn={setIsSignedIn}
+          setIsSignedIn={handleLogin}
           username={username}
           setUsername={setUsername}
         />
