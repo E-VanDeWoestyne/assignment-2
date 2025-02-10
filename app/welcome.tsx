@@ -13,7 +13,7 @@ export default function Welcome() {
     <View style={styles.container}>
       <Text style={styles.title}>Welcome to My App</Text>
       <Pressable>
-        <Text style={styles.title} onPress={tabs}>
+        <Text style={styles.textname} onPress={tabs}>
           Go to Tabs
         </Text>
       </Pressable>
@@ -28,4 +28,5 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   title: { fontSize: 20, fontWeight: "bold" },
+  textname: { fontSize: 20, fontWeight: "bold", color: "blue" },
 });
