@@ -11,7 +11,7 @@ export default function Welcome(user: string) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Welcome to My App {user}</Text>
+      <Text style={styles.title}>Welcome to My App</Text>
 
       <Pressable>
         <Text style={styles.textname} onPress={tabs}>
