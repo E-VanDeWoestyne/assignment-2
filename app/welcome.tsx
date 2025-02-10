@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useRouter } from "expo-router";
 import { View, Text, StyleSheet, Pressable } from "react-native";
 
-export default function Welcome() {
+export default function Welcome(user: string) {
   const router = useRouter();
 
   const tabs = () => {
@@ -11,7 +11,8 @@ export default function Welcome() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Welcome to My App</Text>
+      <Text style={styles.title}>Welcome to My App {user}</Text>
+
       <Pressable>
         <Text style={styles.textname} onPress={tabs}>
           Go to Tabs
