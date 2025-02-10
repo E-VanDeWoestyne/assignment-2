@@ -18,7 +18,7 @@ export default function TabLayout() {
         options={{
           title: "Edmonton",
           tabBarIcon: ({ color }) => (
-            <FontAwesome size={28} name="tree" color={color} />
+            <FontAwesome size={28} name="building" color={color} />
           ),
         }}
       />

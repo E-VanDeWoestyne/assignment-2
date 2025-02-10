@@ -6,13 +6,13 @@ export default function CalgaryScreen() {
       <Text style={styles.title}>Welcome to Calgary</Text>
       <Image
         source={{
-          uri: "https://upload.wikimedia.org/wikipedia/commons/8/8a/Downtown_Calgary.jpg",
+          uri: "https://www.istockphoto.com/photo/calgary-skyline-gm481574937-36897530?searchscope=image%2Cfilm",
         }}
         style={styles.image}
       />
       <Button
         title="Visit Calgary"
-        onPress={() => Linking.openURL("https://www.calgary.ca/")}
+        onPress={() => Linking.openURL("https://www.calgary.ca/home.html")}
       />
     </View>
   );
