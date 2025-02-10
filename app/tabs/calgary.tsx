@@ -6,7 +6,7 @@ export default function CalgaryScreen() {
       <Text style={styles.title}>Welcome to Calgary</Text>
       <Image
         source={{
-          uri: "https://www.istockphoto.com/photo/calgary-skyline-gm481574937-36897530?searchscope=image%2Cfilm",
+          uri: "https://media.istockphoto.com/id/481574937/photo/calgary-skyline.jpg?s=2048x2048&w=is&k=20&c=Nb7EAt6LpfcMi95s3DT0H-HtralMlAKJJaKAtxyRiFY=",
         }}
         style={styles.image}
       />
