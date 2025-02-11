@@ -17,7 +17,6 @@ const Sign_in: React.FC<Sign_inProps> = ({
   const [password, setPassword] = useState<string>("");
 
   const handleLogin = () => {
-    //const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     const userExists = credentials.users.some(
       (user) => user.username === username
     );
@@ -26,7 +25,7 @@ const Sign_in: React.FC<Sign_inProps> = ({
       return;
     }
     if (password.length <= 8) {
-      alert("Password must be at least  characters long");
+      alert("Password must be at least 8 characters long");
       return;
     }
     if (!/[A-Z]/.test(password)) {
