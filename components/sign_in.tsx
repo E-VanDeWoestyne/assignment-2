@@ -17,13 +17,39 @@ const Sign_in: React.FC<Sign_inProps> = ({
   const [password, setPassword] = useState<string>("");
 
   const handleLogin = () => {
-    // Find if username exists
-    const userExists = credentials.users.some(user => user.username === username);
+    //const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    const userExists = credentials.users.some(
+      (user) => user.username === username
+    );
+    if (username.length <= 5) {
+      alert("Username must be at least 5 characters long");
+      return;
+    }
+    if (password.length <= 8) {
+      alert("Password must be at least  characters long");
+      return;
+    }
+    if (!/[A-Z]/.test(password)) {
+      alert("Password must include an uppercase letter");
+      return;
+    }
+    if (!/[a-z]/.test(password)) {
+      alert("Password must include a lowercase letter");
+      return;
+    }
+    if (!/[0-9]/.test(password)) {
+      alert("Password must include a number");
+      return;
+    }
+    if (!/[!@#$%^&*]/.test(password)) {
+      alert("Password must include a special character");
+      return;
+    }
     if (!userExists) {
       alert("Username does not exist");
       return;
     }
-    
+
     const user = credentials.users.find(
       (user) => user.username == username && user.password == password
     );
