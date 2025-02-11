@@ -1,8 +1,19 @@
 import { View, Text, Image, Button, Linking, StyleSheet } from "react-native";
 import PopulationArea from "../../components/interests";
+import PopularPlaces from "../../components/places";
 export default function EdmontonScreen() {
   const population: number = 1.39;
   const area: number = 684.37;
+  const places = [
+    {
+      name: "West Edmonton Mall",
+      link: "https://maps.app.goo.gl/HrxKr1mR2YhkdBb87",
+    },
+    {
+      name: "Fort Edmonton Park",
+      link: "https://maps.app.goo.gl/oJF111DqJ3wnMVRBA",
+    },
+  ];
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Welcome to Edmonton</Text>
@@ -17,6 +28,7 @@ export default function EdmontonScreen() {
         onPress={() => Linking.openURL("https://www.edmonton.ca/")}
       />
       <PopulationArea population={population} area={area} />
+      <PopularPlaces places={places} />
     </View>
   );
 }
