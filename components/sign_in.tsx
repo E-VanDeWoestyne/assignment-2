@@ -17,13 +17,20 @@ const Sign_in: React.FC<Sign_inProps> = ({
   const [password, setPassword] = useState<string>("");
 
   const handleLogin = () => {
+    // Find if username exists
+    const userExists = credentials.users.some(user => user.username === username);
+    if (!userExists) {
+      alert("Username does not exist");
+      return;
+    }
+    
     const user = credentials.users.find(
       (user) => user.username == username && user.password == password
     );
     if (user) {
       setIsSignedIn(true);
     } else {
-      alert("Login failed");
+      alert("Incorrect password"); //sign in can only fail due to incorrect password at this stage
     }
   };
 
