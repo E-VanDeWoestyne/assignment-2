@@ -5,7 +5,6 @@ const RecoverPassword = () => {
   const [email, setEmail] = useState("");
 
   const handlePasswordRecovery = () => {
-    // Mock password recovery function
     if (email) {
       Alert.alert(
         "Password Recovery",

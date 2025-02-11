@@ -1,6 +1,9 @@
 import { View, Text, Image, Button, Linking, StyleSheet } from "react-native";
+import PopulationArea from "../../components/interests";
 
 export default function CalgaryScreen() {
+  const population: number = 1.14;
+  const area: number = 825.29;
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Welcome to Calgary</Text>
@@ -14,6 +17,7 @@ export default function CalgaryScreen() {
         title="Visit Calgary"
         onPress={() => Linking.openURL("https://www.calgary.ca/home.html")}
       />
+      <PopulationArea population={population} area={area} />
     </View>
   );
 }

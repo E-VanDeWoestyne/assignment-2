@@ -10,7 +10,7 @@ export default function App() {
 
   const handleLogin = () => {
     setIsSignedIn(true);
-    router.replace("/welcome"); // Navigate to Welcome
+    router.replace("/welcome");
   };
 
   return (
